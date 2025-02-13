@@ -23,7 +23,10 @@ Infra de notre protype sur **tinkecard**, mais sans des éléments introuvable d
 
 ## **Extrait de code**
 
-### Code pour notre prototype avec un capteur DHT11 
+### Code pour notre prototype avec un DHT22 et Led
+[Script](https://github.com/quentin-beaufort/smart_forest/blob/main/main.ino)
+
+### Code pour notre premier prototype avec un capteur DHT11 
 
 ``` cpp
 #include <LiquidCrystal.h>
@@ -77,6 +80,5 @@ void loop() {
   delay(2000);
 }
 ```
-### Code pour notre prototype avec un DHT22 et Led
-[Script](https://github.com/quentin-beaufort/smart_forest/blob/main/main.ino)
+
 
