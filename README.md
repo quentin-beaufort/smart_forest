@@ -78,57 +78,5 @@ void loop() {
 }
 ```
 ### Code pour notre prototype avec un DHT22 
+[Code](https://github.com/quentin-beaufort/smart_forest/blob/main/main.ino)
 
-``` cpp
-#include <LiquidCrystal.h>
-#include <DHT.h>
-
-// Define DHT pin and type
-#define DHTPIN 8
-#define DHTTYPE DHT22
-
-// Initialize LCD (pins: RS, E, D4, D5, D6, D7)
-LiquidCrystal lcd(12, 11, 5, 4, 3, 2);
-
-// Initialize DHT sensor
-DHT dht(DHTPIN, DHTTYPE);
-
-void setup() {
-  // Set up the LCD's number of columns and rows
-  lcd.begin(16, 2);
-  
-  // Initialize DHT sensor
-  dht.begin();
-  
-  // Print static label
-  lcd.print("H/T");
-}
-
-void loop() {
-  // Read humidity and temperature
-  float humidity = dht.readHumidity() - 9.0;
-  float temperature = dht.readTemperature() - 4.5;
-  
-  // Check if reading was successful
-  if (isnan(humidity) || isnan(temperature)) {
-    lcd.setCursor(0, 1);
-    lcd.print("Error reading!");
-    delay(2000);
-    return;
-  }
-  
-  // Clear second line
-  lcd.setCursor(0, 1);
-  lcd.print("                "); // 16 spaces to clear the line
-  
-  // Display humidity and temperature on second line
-  lcd.setCursor(0, 1);
-  lcd.print(humidity, 1);
-  lcd.print("% / ");
-  lcd.print(temperature, 1);
-  lcd.print("C");
-  
-  // Wait 2 seconds before next reading
-  delay(2000);
-}
-```
