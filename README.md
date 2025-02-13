@@ -22,7 +22,7 @@ Composants de notre prototype :
 Infra de notre protype sur **tinkecard**, mais sans des éléments introuvable dessus comme le DHT remplacé par un capteur d'humidité dans le sol.
 
 **Vidéo de notre prototype**
-[Prototype Test](https://github.com/quentin-beaufort/smart_forest/blob/main/VID_20250213_145719.mp4)
+![Prototype Test](https://github.com/quentin-beaufort/smart_forest/blob/main/VID_20250213_145719.mp4)
 
 **Photo de notre prototype**
 [Prototype](https://github.com/quentin-beaufort/smart_forest/blob/main/Prototype_IOT.jpeg)
