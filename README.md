@@ -1,6 +1,6 @@
 # smart_forest
 
-## ** Installation **
+## **Installation**
 
 Pour pouvoir faire fonctionner les script de notre prototype il faut 2 librairies : 
 * Liquid Crystal
@@ -12,7 +12,7 @@ Pour pouvoir faire fonctionner les script de notre prototype il faut 2 librairie
 
 Infra de notre protype sur **tinkecard**, mais sans des éléments introuvable dessus comme le DHT remplacé par un capteur d'humidité dans le sol.
 
-## **Extrait de code **
+## **Extrait de code**
 
 ### Code pour notre prototype avec un capteur DHT11 
 
