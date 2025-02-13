@@ -24,6 +24,8 @@ Infra de notre protype sur **tinkecard**, mais sans des éléments introuvable d
 **Vidéo de notre prototype**
 [Prototype Test](https://github.com/quentin-beaufort/smart_forest/blob/main/VID_20250213_145719.mp4)
 
+**Photo de notre prototype**
+[Prototype](https://github.com/quentin-beaufort/smart_forest/blob/main/Prototype_IOT.jpeg)
 ## **Extrait de code**
 
 ### Code pour notre prototype avec un DHT22 et Led
