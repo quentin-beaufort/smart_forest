@@ -6,6 +6,15 @@ Pour pouvoir faire fonctionner les script de notre prototype il faut 2 librairie
 * Liquid Crystal
 * DHT
 
+Composants de notre prototype : 
+* Ecran LCD 1602
+* Une RGB Led
+* Elegoo Uno R3
+* DHT22
+* 5 résistances (4 * 220Ω, 2kΩ )
+* BreadBoard
+* 1 câble USB
+  
 ## **Schema de notre prototype**
 
 ![Infra protoype](https://github.com/quentin-beaufort/smart_forest/blob/main/Fantastic%20Krunk.png)
