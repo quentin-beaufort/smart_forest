@@ -16,3 +16,6 @@
 ## Architecture 
 
 ![Architecture](https://github.com/quentin-beaufort/smart_forest/blob/main/TP2/Architecture.pdf)
+
+<iframe src="https://github.com/quentin-beaufort/smart_forest/blob/main/TP2/Architecture.pdf" width="100%" height="600px"></iframe>
+
