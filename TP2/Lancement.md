@@ -15,4 +15,6 @@
 
 ## Architecture 
 
-![Architecture](https://github.com/quentin-beaufort/smart_forest/blob/main/TP2/Architecture.pdf)
+![Voir l'architecture](https://github.com/quentin-beaufort/smart_forest/blob/main/TP2/Architecture.pdf)
+
+![Architecture](https://github.com/quentin-beaufort/smart_forest/blob/main/TP2/Architecture_image.png)
