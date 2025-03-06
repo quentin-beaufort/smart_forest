@@ -11,3 +11,8 @@
 - Flash le code du publisher sur l'ESP A lié au capteur
 
 - Flash le code du subscriber sur l'ESP B lié à la LED
+
+
+## Architecture 
+
+![Architecture](https://github.com/quentin-beaufort/smart_forest/blob/main/TP2/Architecture.pdf)
