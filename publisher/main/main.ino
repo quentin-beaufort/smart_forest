@@ -1,41 +1,49 @@
+#include <Adafruit_Sensor.h>
+#include <DHT.h>
 #include <WiFi.h>
 #include <PubSubClient.h>
 
-const char* ssid = "WiFi@YNOV";
+const char* ssid = "ENTER YOUR SSID";
+const char* password = "ENTER YOUR SSID PASSWORD";
 
-const char* password = "MDP";
-const char* username = "Email";
-
-// ⚡ Configuration du broker MQTT
-const char* mqtt_server = "IP PERSO";  // Remplace par ton broker MQTT
+const char* mqtt_server = "ENTER IP OF THE BROKER";
 const int mqtt_port = 1883;
+const char* mqtt_topic_temp = "esp32/temperature";
 
 WiFiClient espClient;
 PubSubClient client(espClient);
 
+#define DHTPIN 21
+#define DHTTYPE DHT11
+
+DHT dht(DHTPIN, DHTTYPE);
+
 void setup() {
   Serial.begin(115200);
+  Serial.println("Initialisation du DHT11...");
   delay(5000);
 
   // 🔌 Connexion au Wi-Fi
-  WiFi.disconnect(true);  //disconnect form wifi to set new wifi connection
-  WiFi.mode(WIFI_STA);    //init wifi mode
-  WiFi.begin(ssid, WPA2_AUTH_PEAP, username, username, password);
+  WiFi.disconnect(true);
+  WiFi.mode(WIFI_STA);
+
+  WiFi.begin(ssid, password);
   Serial.print("Connexion au WiFi...");
   
   while (WiFi.status() != WL_CONNECTED) {
     Serial.print(".");
-    Serial.print(WiFi.status());
     delay(500);
   }
-
   Serial.println("\nConnecté au WiFi !");
   Serial.print("Adresse IP : ");
   Serial.println(WiFi.localIP());
 
-  // 🔗 Connexion au broker MQTT
   client.setServer(mqtt_server, mqtt_port);
   reconnectMQTT();
+
+
+  dht.begin();
+  delay(2000);
 }
 
 void reconnectMQTT() {
@@ -53,18 +61,30 @@ void reconnectMQTT() {
   }
 }
 
+
 void loop() {
-  if (!client.connected()) {
-    reconnectMQTT();
-  }
+  delay(2000);
+
   client.loop();
 
-  // 📡 Envoi d'un message MQTT toutes les 5 secondes
-  static unsigned long lastMsg = 0;
-  if (millis() - lastMsg > 5000) {
-    lastMsg = millis();
-    String message = "Hello MQTT!";
-    Serial.println("Envoi MQTT : " + message);
-    client.publish("esp32/test", message.c_str());
+  client.publish("esp32/test", "Hello MQTT!");
+  Serial.println(" test!");
+
+  float temperature = dht.readTemperature(); // Température en °C
+
+  if (isnan(temperature)) {
+    Serial.println("Erreur de lecture du DHT11 !");
+    Serial.println(dht.readTemperature());
+    delay(2000);
+    return;
   }
+
+  Serial.print("🌡️ Température : ");
+  Serial.print(temperature);
+  Serial.println(" °C");
+
+  client.publish("esp32/temperature", String(temperature).c_str());
+
+  delay(5000);
+
 }
