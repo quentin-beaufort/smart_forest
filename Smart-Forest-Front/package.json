@@ -16,6 +16,7 @@
     "@primeuix/themes": "^1.0.0",
     "@tanstack/vue-query": "^5.69.0",
     "axios": "^1.8.4",
+    "firebase": "^11.5.0",
     "flowbite": "^3.1.2",
     "flowbite-vue": "^0.2.0",
     "pinia": "^3.0.1",
